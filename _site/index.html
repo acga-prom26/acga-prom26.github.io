@@ -1,0 +1,3966 @@
+<!DOCTYPE html>
+<html lang="cs" data-theme="stone">
+  <head>
+    <meta charset="utf-8" />
+    <title>🎉 ACGA Prom 2026</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    
+
+    <style>
+      :root {
+        --bar-height: 5rem;
+        --safe-height: calc(100dvh - var(--bar-height));
+
+        --fade-duration: 400ms;
+        --ease-main: cubic-bezier(0.25, 0.1, 0.25, 1);
+      }
+
+      :root[data-theme="stone"] {
+        --bg-main: #b8b4b0;
+
+        --button-primary: rgba(255, 255, 255, 0.35);
+        --button-secondary: rgba(168, 162, 158, 0.8);
+
+        --text-primary: #1c1917;
+        --text-secondary: #44403c;
+
+        --shadow-card: 0 30px 60px -15px rgba(0, 0, 0, 0.45);
+      }
+
+      body {
+        background: var(--bg-main);
+      }
+
+      .card {
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+          opacity var(--fade-duration) var(--ease-main),
+          transform var(--fade-duration) var(--ease-main);
+      }
+      .card.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      #xScroller,
+      #xScroller section {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      #xScroller::-webkit-scrollbar,
+      #xScroller section::-webkit-scrollbar {
+        display: none;
+      }
+
+      .class-btn {
+        color: var(--text-secondary);
+      }
+      .class-btn.is-active {
+        color: var(--text-primary);
+      }
+
+      #splash {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        background: var(--bg-main);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 600ms ease;
+      }
+      #splash.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .splash-btn {
+        background: var(--button-primary);
+        line-height: 1;
+      }
+    </style>
+  </head>
+
+  <body class="overflow-hidden">
+
+    <!-- SPLASH -->
+    <div id="splash">
+      <div class="flex flex-col items-center text-center px-6 max-w-xl">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4">
+          Maturitní ples ACGA 2026
+        </h1>
+
+        <p class="text-lg sm:text-xl mb-2">
+          Vítejte na plese v opeře!
+        </p>
+
+        <p class="text-base sm:text-lg text-[var(--text-secondary)] mb-8">
+          Seznamte se s letošními maturanty tříd
+        </p>
+
+        <div class="grid grid-cols-2 gap-8">
+          
+            <button
+              data-room="SR4A"
+              class="splash-btn w-40 h-40 rounded-2xl
+                     text-3xl font-bold
+                     text-[var(--text-primary)]
+                     shadow-xl
+                     transition
+                     hover:opacity-80"
+            >
+              SR4A
+            </button>
+          
+            <button
+              data-room="SR4C"
+              class="splash-btn w-40 h-40 rounded-2xl
+                     text-3xl font-bold
+                     text-[var(--text-primary)]
+                     shadow-xl
+                     transition
+                     hover:opacity-80"
+            >
+              SR4C
+            </button>
+          
+            <button
+              data-room="SR4D"
+              class="splash-btn w-40 h-40 rounded-2xl
+                     text-3xl font-bold
+                     text-[var(--text-primary)]
+                     shadow-xl
+                     transition
+                     hover:opacity-80"
+            >
+              SR4D
+            </button>
+          
+            <button
+              data-room="SR4E"
+              class="splash-btn w-40 h-40 rounded-2xl
+                     text-3xl font-bold
+                     text-[var(--text-primary)]
+                     shadow-xl
+                     transition
+                     hover:opacity-80"
+            >
+              SR4E
+            </button>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <main
+      id="xScroller"
+      class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth"
+      style="height: var(--safe-height);"
+    >
+      
+        <section
+          class="w-screen flex-shrink-0
+                 overflow-y-auto
+                 snap-center
+                 snap-y snap-mandatory"
+          data-room="SR4A"
+        >
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/422688bb-1c40-4fcd-a7fd-a74e19c36c83.webp"
+                    alt="Pan učitel O. Boštička"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Pan učitel O. Boštička
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      „Můžeš dovést koně až k řece, ale napít se musí sám.“
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/b47c7d65-90cb-4e2e-85ac-494daac7d9a5.webp"
+                    alt="Adéla Mervartová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Adéla Mervartová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;Life is what happens to you while you&#39;re busy making other plans.&quot; - John Lennon
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/4305252e-2c32-42eb-b621-2a521579f7e1.webp"
+                    alt="Anna Černá"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Anna Černá
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      It feels so scary getting old.
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/986982aa-d601-419b-808d-0a7dea377404.webp"
+                    alt="Anna Kuskildina"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Anna Kuskildina
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      People have throw dirt on my name, others have given flowers. It’s all a garden to me.
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/3a114691-cb9e-40bf-9efe-3d7090474dda.webp"
+                    alt="Anna Marie Aneltová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Anna Marie Aneltová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      happier than ever
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/044f6f54-2b9a-4db7-b92d-1f4559a3ddcc.webp"
+                    alt="Anna Marie Dosoudilová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Anna Marie Dosoudilová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      wait im goated
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/63414d8c-7d50-40f7-a9c8-d15a7f1c68da.webp"
+                    alt="Barbora Vachtlová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Barbora Vachtlová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      ,„Niekto príde, niekto zmizne, je to kolobeh.&quot; – Sara Rikas
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/d6a88c6d-70dc-4f92-bad5-3c623e42563c.webp"
+                    alt="Claudina Pereira"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Claudina Pereira
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;Must one person&#39;s triumph be another&#39;s humiliation? Of course!&quot; - $uicideboy$
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/3b032f7c-cfa0-4760-84b0-e12820869b4b.webp"
+                    alt="David Lazárek"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    David Lazárek
+                  </h2>
+
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/5fd72e85-b54f-46ca-90af-fe1461990750.webp"
+                    alt="Eliška Kubíková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Eliška Kubíková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;Im not a frontflipper ofc I can backflip bro the hell&quot; - rommulas
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/9ee8a035-07e7-468c-9c3d-6ec3014d28e6.webp"
+                    alt="Emily Vicari"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Emily Vicari
+                  </h2>
+
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/b123a2d9-35ea-426c-b7bb-9b272863d775.webp"
+                    alt="Ester Zárubová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Ester Zárubová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      people tend to feel that im Michael Jackson reincarnated
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/3cae5d5d-107d-45f2-823c-d36c6ec86684.webp"
+                    alt="Eva Synková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Eva Synková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      “Do me a favor—look into my eyes?” “Your eyes?” “Do you see him? The most beautiful person in the whole world.” — Rou Bao Bu Chi Rou
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/68cb503e-89e4-4145-aa5d-2f82282729a9.webp"
+                    alt="Karolína Karlová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Karolína Karlová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      “Happiness can be found, even in the darkest of times, if one only remembers to turn on the light.”
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/478cbf74-7cee-4b87-ad17-9fdd25627128.webp"
+                    alt="Karolína Šavlová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Karolína Šavlová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      „Mama, I don’t have time for dancin’. That’s just gonna have to wait awhile.” - Anika Noni Rose
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/08427385-42a2-4d76-a872-e5ba853f739b.webp"
+                    alt="Kristýna Kulhanová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Kristýna Kulhanová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      Ignorance Is Bliss
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/d6fb89ba-f0fe-4491-ac12-81e01ce91939.webp"
+                    alt="Lia Šimáčková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Lia Šimáčková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;Everyone you meet is fighting a battle you know nothing about. Be Kind. Always,&quot; - Robin Williams
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/8a3a82f8-a317-48f1-acd0-a9226621b412.webp"
+                    alt="Milana Žuravleva"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Milana Žuravleva
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;In the end, if I fall or if I get it all, I just hope that it&#39;s worth it.&quot; - Jesse Rutherford
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/80d8586f-098b-47a6-99ca-7ddd7118a11e.webp"
+                    alt="Natálie Štancová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Natálie Štancová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;Years have passed but you laugh exactly the same.&quot; - Conan Gray
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/002a6972-e72f-4474-a480-f0cada1544b1.webp"
+                    alt="Nicol Baranjuková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Nicol Baranjuková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      keep your childlike spark alive
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/abb1cd18-1cbc-4183-8f65-3c9b1add64a3.webp"
+                    alt="Robin Mácha"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Robin Mácha
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      “If it is not right, do not do it; if it is not true, do not say it.”
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/ac5ba20f-80e1-4db0-a7f7-542a5919da74.webp"
+                    alt="Sophie Novotná"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Sophie Novotná
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      for this life I cannot change
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/ffa86203-7fa4-4647-b914-b9e002b7991c.webp"
+                    alt="Stella Valentová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Stella Valentová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      “but to feel nothing so as not to feel anything — what a waste&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+        </section>
+      
+        <section
+          class="w-screen flex-shrink-0
+                 overflow-y-auto
+                 snap-center
+                 snap-y snap-mandatory"
+          data-room="SR4C"
+        >
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/810a3077-439a-4b84-80ee-26496e5083d8.webp"
+                    alt="Paní učitelka V. Aubrechtová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Paní učitelka V. Aubrechtová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      „Nic není nemožné, nikdy nic nevzdávej.&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/5fe89c54-b555-4178-9b3d-ff784ee6f675.webp"
+                    alt="Adéla Mašínová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Adéla Mašínová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      GNARLY.
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/e6c9f72e-02db-41a8-87f7-280b83a01452.webp"
+                    alt="Adéla Rypková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Adéla Rypková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;If it was easy, everyone would do it.&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/89cbcb27-c713-4517-8d92-11723fe0b1f2.webp"
+                    alt="Andrea Boušková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Andrea Boušková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      can&#39;t rush greatness
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/3240fa36-0031-4703-ac2e-7a37439eb3cd.webp"
+                    alt="Anna Zikmundová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Anna Zikmundová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      ,,Nejkrásnější hudba je lidský smích.” - Jan Werich
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/143c8089-0e1f-4fea-8997-1be058cd10d4.webp"
+                    alt="Bára Šulcová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Bára Šulcová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      Ratatouille Main Theme - M. Giacchino
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/5b423c4b-c76b-4ce3-99d2-6fe6dcfdee3b.webp"
+                    alt="Eliška Kopačynská"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Eliška Kopačynská
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      „A o tom se budete, děti, ještě hodně učit.” - A. P.
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/3daa9442-b42b-45ef-a6ad-f316fd26726d.webp"
+                    alt="Hana Phiphitsala"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Hana Phiphitsala
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;To infinity and beyond!&quot; - Woody, Toy Story
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/7aa8e6b5-3dd2-433f-8b79-cee037023350.webp"
+                    alt="Jakub Jiří Zelenka"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Jakub Jiří Zelenka
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      „Jedem nocí, protože den nechci.&quot; - Sergei Barracuda
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/f649042f-9171-4426-9756-e042696632ac.webp"
+                    alt="Jana Riško"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Jana Riško
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      ашалеть
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/1f6c265b-dd39-44a2-a40d-2d5961de643e.webp"
+                    alt="Julie Drhličková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Julie Drhličková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      But the dawn is brief and the day full often belies its promise.
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/cd73c882-d2da-4d18-8a5d-ef95c762d1c3.webp"
+                    alt="Julie Mandíková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Julie Mandíková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      Rise and Shine, Ursine!
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/eed03828-103e-4bf8-bf45-604dd4162b8d.webp"
+                    alt="Karolína Stříbrná"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Karolína Stříbrná
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;Can&#39;t remember the name, huh? A senior moment perhaps.&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/5dd4f952-0a06-4762-a481-e96d702584b5.webp"
+                    alt="Kateřina Hodová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Kateřina Hodová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      Tak bojuj ne?!
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/a361ba68-6337-4a5e-96d1-fcba204c40b0.webp"
+                    alt="Kateřina Anna Kolářová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Kateřina Anna Kolářová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      „Na záchod pouze v situaci KRAJNÍ nouze&quot; - A. P.
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/e5109faa-4dab-43d2-8915-d4a7859e616a.webp"
+                    alt="Michael Sehnal"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Michael Sehnal
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      Happy Monday!
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/8446dfbd-b8e7-40ac-b861-632af1c22a6c.webp"
+                    alt="Miriam Sais"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Miriam Sais
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      certified lovergirl
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/81e46d6c-7fc1-4268-a65a-ed3c75002081.webp"
+                    alt="Nella Viktorie Šperlová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Nella Viktorie Šperlová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;You can never be overdressed or overeducated&quot; – Oscar Wilde
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/152cde4e-954e-436c-8d37-6b4443c03abd.webp"
+                    alt="Nicol Rybářová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Nicol Rybářová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      „Můžete všechny barvy AŽ na oranžovou, ta je moje.” - A. V.
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/e7e8072f-422d-4350-9289-d4a96dae93ee.webp"
+                    alt="Štěpán Luťanský"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Štěpán Luťanský
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      Nešahej na mé rádio a perleťový lak  - Sergei Barracuda
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/bd5871b9-a928-41a7-9d6a-10bbabdb339f.webp"
+                    alt="Tereza Bečičková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Tereza Bečičková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;Everything happens for a reason&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/1c6b7f7e-148b-4cf5-a20b-cf175849274a.webp"
+                    alt="Veronika Hanzlíková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Veronika Hanzlíková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;Will I spend all the rest of my years wishing I could go back?&quot; - Olivia Rodrigo
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/21c524aa-49f4-4fa8-a77a-e33056ba2fd0.webp"
+                    alt="Veronika Šlemrová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Veronika Šlemrová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      what feels like the end is often the beginning
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/2a27fbda-50e2-4d66-9e6b-1f2911bb12df.webp"
+                    alt="Viktorie Březinová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Viktorie Březinová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      „Neřeš kolik máme peněz, hlavně že máš mě já tebe. &quot; - Viktor Sheen
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/c9379297-9119-45d8-b4b1-9fc7f2068aac.webp"
+                    alt="Viktorie Šestáková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Viktorie Šestáková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;Laugh Now Cry Later&quot; - Drake
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+        </section>
+      
+        <section
+          class="w-screen flex-shrink-0
+                 overflow-y-auto
+                 snap-center
+                 snap-y snap-mandatory"
+          data-room="SR4D"
+        >
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/2a20a0e1-d45f-4b89-8526-5670c56157b4.webp"
+                    alt="Paní učitelka A. Vimrová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Paní učitelka A. Vimrová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;Teaching math and logic with a touch of magic.&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/9d7a9f43-7d75-4968-9636-5101d3b800b8.webp"
+                    alt="Amélie Chvojková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Amélie Chvojková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      What, like it&#39;s hard? - Elle Woods
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/9ecd45fa-bab9-436a-9994-6277546dcdef.webp"
+                    alt="Anna Mia Stolařová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Anna Mia Stolařová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      What people say isn&#39;t going to stop me. I have to do things for myself.- Kate Moss
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/5fbdc58f-4111-42ee-b26d-d55734e17d06.webp"
+                    alt="Barbora Krejčí"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Barbora Krejčí
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      No pain, no gain
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/a683c5ff-99f0-4692-86ae-d2da87936403.webp"
+                    alt="Ela Rychtaříková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Ela Rychtaříková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      Tequila won&#39;t fix your life, but it&#39;s worth a shot.
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/cd196649-f6ca-43f9-88c2-fef5bd437a2c.webp"
+                    alt="Eliška Kozderková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Eliška Kozderková
+                  </h2>
+
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/218fd7db-2b80-41e1-ad17-e107dce8dca1.webp"
+                    alt="Ester Železná"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Ester Železná
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      I have been changed for good. - Wicked
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/5ea1eef0-d0b9-4fdb-aad8-e80f1b0182fc.webp"
+                    alt="Eva Dušátková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Eva Dušátková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      Baby, you&#39;re the baddest girl
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/567b5d1b-375b-4e2c-b6fd-ee5f2ffa8fa3.webp"
+                    alt="Filip Stříbrný"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Filip Stříbrný
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      Common sense is like deodorant. The people who need it most never use it.
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/2ce499b0-a3a2-47d2-bcf9-04362f80c947.webp"
+                    alt="Izabela Kubies"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Izabela Kubies
+                  </h2>
+
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/7e4c08c8-536b-44a8-b169-29fba7b6d810.webp"
+                    alt="Jana Adámková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Jana Adámková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      meet me at the lake &#39;round ten?
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/b5589cb4-0465-4e24-af6b-ff2e6579ffd4.webp"
+                    alt="Joseph Louis Stein"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Joseph Louis Stein
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      Normality is a paved road. It’s comfortable to walk, but no flowers grow on it - Vincent Van Gogh
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/9ca091b2-1a4f-4236-b381-dfce5101d3c6.webp"
+                    alt="Klára Varhaníková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Klára Varhaníková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      my vibe could bring back Christ
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/10ede79a-c21a-43da-909e-6a93c3fab475.webp"
+                    alt="Laura Mirošníková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Laura Mirošníková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      None of this would&#39;ve happened if it wasn&#39;t for the cheese. - Goat Story
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/7cbcaab6-4243-4b6d-b533-ce3cca371655.webp"
+                    alt="Leonard Reed Stein"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Leonard Reed Stein
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      Laziness is nothing more than the habit of resting before you get tired
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/fd9925fc-82a3-483f-9afa-3addf5ae7931.webp"
+                    alt="Martin Stoklásek"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Martin Stoklásek
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      Žij ten život.
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/59da5c9f-7fa5-4bd8-9591-ed29971cbe3d.webp"
+                    alt="Matěj Pavlík"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Matěj Pavlík
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      We&#39;re all just victims of a crime - M. Shadows
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/104a76ec-a23d-4197-bd98-9c37cffff3e8.webp"
+                    alt="Maya Vondráčková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Maya Vondráčková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      When nothing goes right... go left.
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/c7c69242-ecfa-4db4-beb3-a9d608d2a0b0.webp"
+                    alt="Monika Prokešová Flores"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Monika Prokešová Flores
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      Que será, será.
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/550d46f5-9da4-41a5-bd89-21b67e793d36.webp"
+                    alt="Patrik Štráberger"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Patrik Štráberger
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      The shot clock doesn&#39;t care if you shoot it, but your conscience will.
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/ea5a3eb9-ea21-4d67-bdd6-c23d9ea2d83a.webp"
+                    alt="Tadeáš Freund"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Tadeáš Freund
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      Simply Lovely! I&#39;ll tell you that! - Max Verstappen
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/7668e483-4cc8-40e0-a782-221e3f30fc28.webp"
+                    alt="Tobiáš Malásek"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Tobiáš Malásek
+                  </h2>
+
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/0e64d4c5-da22-4e6a-a1e8-6c974282d569.webp"
+                    alt="Viktorie Voříšková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Viktorie Voříšková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      Endlessly blessed, forever grateful
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+        </section>
+      
+        <section
+          class="w-screen flex-shrink-0
+                 overflow-y-auto
+                 snap-center
+                 snap-y snap-mandatory"
+          data-room="SR4E"
+        >
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/43e27310-a1f5-49bc-a11c-6ae6300a49e4.webp"
+                    alt="Paní učitelka P. Březinová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Paní učitelka P. Březinová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;Nemůžeš? Přidej!&quot; Emil Zátopek
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/76c2aa0f-9ef7-4f17-9532-613806a19815.webp"
+                    alt="Anastasia Sevcenco"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Anastasia Sevcenco
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;All our dreams will come true if we have the courage to pursue them&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/7943ac6e-bf12-4670-bd72-91ec5ca2f5a0.webp"
+                    alt="Anna Cimrmanová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Anna Cimrmanová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;Look like Barbie, smoke like Marley.&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/3960be55-6147-47e8-9f5e-b4c4637a2f3d.webp"
+                    alt="Anna Šejblová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Anna Šejblová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;essere piuttosto sembrare&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/dc2afac5-b0b8-4d2c-a9cf-44020df7ad10.webp"
+                    alt="Barbora Kasová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Barbora Kasová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      “Keep your heels, head and standards high.” – Coco Chanel
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/23ced243-4d6f-425f-8831-f1e2e3ee7b09.webp"
+                    alt="Eliška Janoušková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Eliška Janoušková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      ”just because u don&#39;t give up, doesn&#39;t mean u will make it&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/e3d27e4a-ae01-440a-becd-0fcba409e55b.webp"
+                    alt="Ella Macková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Ella Macková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      Helvetica bold.
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/f11842af-90aa-454e-9cc3-c4e9d3615e75.webp"
+                    alt="Emma Francine Dupaux"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Emma Francine Dupaux
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;fakt jsem se snažila&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/610ed74a-1859-4db6-a304-e281838ca3a3.webp"
+                    alt="Eva Žižková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Eva Žižková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;You are who you surround yourself with.&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/0ca2f86c-7f4a-4abc-91bc-3e8a0a2bc48b.webp"
+                    alt="Jan Delevič"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Jan Delevič
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;Quod licet Iovi, non licet bovi&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/6d0766b8-319d-4c41-bc4d-491acd860dad.webp"
+                    alt="Kristina Anna Bartáková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Kristina Anna Bartáková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      realistic goals are for average people.
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/9a4f13ae-e1ea-481c-8d44-aac1c234134c.webp"
+                    alt="Kryštof Turek"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Kryštof Turek
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      I like my women how I like my coffee. I don’t like coffee.
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/0a15f89f-dcf9-4563-b58e-214ed9c4cdf6.webp"
+                    alt="Leontýna Liščáková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Leontýna Liščáková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      „Nemůžeš přijít pozdě, když nepřijdeš vůbec“
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/3e413f18-05dc-4426-b61c-0b55a85e9a91.webp"
+                    alt="Matěj Drahoš"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Matěj Drahoš
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      Whoever gives nothing, has nothing. The greatest misfortune is not to be unloved, but not to love.
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/19fbb9c8-3a3b-4bd0-8671-49fc96ad3831.webp"
+                    alt="Nikol Pancnerová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Nikol Pancnerová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      *PŘIZNÁNÍ* Můj největší strach je, že mi někdo sundá ponožky a já nebudu mít upravené nehty na nohou
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/96210bc0-8e41-4f11-b031-dcbd503dba9d.webp"
+                    alt="Sarah Ladjimi"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Sarah Ladjimi
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      “Long story short I survived.”
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/72de335c-dad5-47cc-8161-f38c5d4e4a54.webp"
+                    alt="Stela Fančíková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Stela Fančíková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;nejhorší smrt je z vyplašení&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/f9364207-bdd1-419d-aad1-858bb73745f9.webp"
+                    alt="Štěpánka Kozlová"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Štěpánka Kozlová
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;jsem č * * * *, že jsem sem lezl&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/e8e4a80a-ae6e-4c85-bf60-889d79c760d0.webp"
+                    alt="Tereza Koudelková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Tereza Koudelková
+                  </h2>
+
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/00a8f70a-f085-48c0-9b1a-ff420e113555.webp"
+                    alt="Tereza Krňanská"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Tereza Krňanská
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot; #mě nedostanou&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/61abb1b0-1d8c-4d1e-8fc9-5e54c9aebaec.webp"
+                    alt="Veronika Pečenková"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Veronika Pečenková
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;Why fall in love when you can fall asleep.&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/15024070-1cb6-41ab-a352-8593f59ca93d.webp"
+                    alt="Veronika Pokorná"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Veronika Pokorná
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      quote so fire im gatekeeping
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/7be95e0a-1e2d-4b3c-b20e-6a5cf5d33870.webp"
+                    alt="Vojtěch Kovařík"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    Vojtěch Kovařík
+                  </h2>
+
+                  
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      &quot;La pasión&quot;
+                    </blockquote>
+                  
+                </div>
+
+              </div>
+            </div>
+          
+        </section>
+      
+    </main>
+
+    <!-- BUTTON BAR -->
+    <nav
+      class="sticky bottom-0 z-30 backdrop-blur"
+      style="height: var(--bar-height); background: var(--button-secondary);"
+    >
+      <div
+        id="classBar"
+        class="relative h-full grid grid-cols-4"
+      >
+        <div
+          id="activeIndicator"
+          class="absolute inset-y-0 left-0
+                 transition-transform duration-300 ease-out"
+          style="
+            width: calc(100% / 4);
+            background: var(--button-primary);
+          "
+        ></div>
+
+        
+          <button class="class-btn z-10 flex items-center justify-center font-semibold">
+            SR4A
+          </button>
+        
+          <button class="class-btn z-10 flex items-center justify-center font-semibold">
+            SR4C
+          </button>
+        
+          <button class="class-btn z-10 flex items-center justify-center font-semibold">
+            SR4D
+          </button>
+        
+          <button class="class-btn z-10 flex items-center justify-center font-semibold">
+            SR4E
+          </button>
+        
+      </div>
+    </nav>
+
+    <!-- CONFETTI LIB -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- LOGIC -->
+    <script>
+      const scroller = document.getElementById('xScroller');
+      const classButtons = [...document.querySelectorAll('.class-btn')];
+      const splash = document.getElementById('splash');
+      const splashButtons = splash.querySelectorAll('button');
+      const indicator = document.getElementById('activeIndicator');
+
+      function scrollToRoom(index, behavior = 'smooth') {
+        scroller.scrollTo({
+          left: index * window.innerWidth,
+          behavior
+        });
+      }
+
+      function updateIndicator() {
+        const index = Math.round(scroller.scrollLeft / window.innerWidth);
+        indicator.style.transform = `translateX(${index * 100}%)`;
+
+        classButtons.forEach((btn, i) =>
+          btn.classList.toggle('is-active', i === index)
+        );
+      }
+
+      classButtons.forEach((btn, index) => {
+        btn.addEventListener('click', () => scrollToRoom(index));
+      });
+
+      /* one-time splash explosion */
+      function splashExplosion() {
+        const colors = [
+          '#ef4444', '#f97316', '#facc15',
+          '#22c55e', '#06b6d4', '#3b82f6',
+          '#8b5cf6', '#ec4899'
+        ];
+
+        const BURST_COUNT = 4;
+
+        for (let i = 0; i < BURST_COUNT; i++) {
+          const f = 1 + (i * 0.2);
+          const x = Math.random() * 0.2 + 0.4;
+          const y = Math.random() * 0.2 + 0.4;
+          const count = (Math.floor(Math.random() * 100) + 100) * f;
+          const delay = (Math.random() * 25 + 350) * f;
+
+          setTimeout(() => {
+            confetti({
+              particleCount: count,
+              spread: 360,
+              startVelocity: 20 * f,
+              scalar: 0.8,
+              origin: { x, y },
+              colors
+            });
+          }, delay * (i + 1));
+        }
+      }
+      
+      splashButtons.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+          scrollToRoom(index, 'auto');
+          splash.classList.add('hidden');
+        });
+      });
+
+      scroller.addEventListener('scroll', () => {
+        requestAnimationFrame(updateIndicator);
+      });
+
+      updateIndicator();
+      splashExplosion();
+    </script>
+
+  </body>
+</html>

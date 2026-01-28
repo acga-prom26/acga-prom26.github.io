@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="cs" data-theme="stone">
+  <head>
+    <meta charset="utf-8" />
+    <title>🎉 ACGA Prom 2026</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    {% set bar_height = "5rem" %}
+
+    <style>
+      :root {
+        --bar-height: {{ bar_height }};
+        --safe-height: calc(100dvh - var(--bar-height));
+
+        --fade-duration: 400ms;
+        --ease-main: cubic-bezier(0.25, 0.1, 0.25, 1);
+      }
+
+      :root[data-theme="stone"] {
+        --bg-main: #b8b4b0;
+
+        --button-primary: rgba(255, 255, 255, 0.35);
+        --button-secondary: rgba(168, 162, 158, 0.8);
+
+        --text-primary: #1c1917;
+        --text-secondary: #44403c;
+
+        --shadow-card: 0 30px 60px -15px rgba(0, 0, 0, 0.45);
+      }
+
+      body {
+        background: var(--bg-main);
+      }
+
+      .card {
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+          opacity var(--fade-duration) var(--ease-main),
+          transform var(--fade-duration) var(--ease-main);
+      }
+      .card.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      #xScroller,
+      #xScroller section {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      #xScroller::-webkit-scrollbar,
+      #xScroller section::-webkit-scrollbar {
+        display: none;
+      }
+
+      .class-btn {
+        color: var(--text-secondary);
+      }
+      .class-btn.is-active {
+        color: var(--text-primary);
+      }
+
+      #splash {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        background: var(--bg-main);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 600ms ease;
+      }
+      #splash.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .splash-btn {
+        background: var(--button-primary);
+        line-height: 1;
+      }
+    </style>
+  </head>
+
+  <body class="overflow-hidden">
+
+    <!-- SPLASH -->
+    <div id="splash">
+      <div class="flex flex-col items-center text-center px-6 max-w-xl">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4">
+          Maturitní ples ACGA 2026
+        </h1>
+
+        <p class="text-lg sm:text-xl mb-2">
+          Vítejte na plese v opeře!
+        </p>
+
+        <p class="text-base sm:text-lg text-[var(--text-secondary)] mb-8">
+          Seznamte se s letošními maturanty tříd
+        </p>
+
+        <div class="grid grid-cols-2 gap-8">
+          {% for room in classrooms %}
+            <button
+              data-room="{{ room }}"
+              class="splash-btn w-40 h-40 rounded-2xl
+                     text-3xl font-bold
+                     text-[var(--text-primary)]
+                     shadow-xl
+                     transition
+                     hover:opacity-80"
+            >
+              {{ room }}
+            </button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <main
+      id="xScroller"
+      class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth"
+      style="height: var(--safe-height);"
+    >
+      {% for room in classrooms %}
+        <section
+          class="w-screen flex-shrink-0
+                 overflow-y-auto
+                 snap-center
+                 snap-y snap-mandatory"
+          data-room="{{ room }}"
+        >
+          {% for person in
+            people_record
+            | filter_classroom(room)
+            | order_classroom
+          %}
+            <div
+              class="h-[var(--safe-height)]
+                     flex items-center justify-center
+                     snap-center"
+            >
+              <div class="card flex flex-col items-center w-full px-4">
+
+                <div
+                  class="w-full max-w-[85vw] sm:max-w-[60vw]
+                         max-h-[60vh] sm:max-h-[62vh]
+                         aspect-[1/1.618]
+                         overflow-hidden
+                         rounded-2xl"
+                  style="box-shadow: var(--shadow-card);"
+                >
+                  <img
+                    src="/assets/{{ person.asset_name }}"
+                    alt="{{ person | display_name }}"
+                    loading="lazy"
+                    onload="this.closest('.card').classList.add('is-visible')"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div class="mt-6 text-center">
+                  <h2 class="text-2xl sm:text-4xl font-bold">
+                    {{ person | display_name }}
+                  </h2>
+
+                  {% if person.quote %}
+                    <blockquote class="italic text-base sm:text-lg text-[var(--text-secondary)]">
+                      {{ person.quote }}
+                    </blockquote>
+                  {% endif %}
+                </div>
+
+              </div>
+            </div>
+          {% endfor %}
+        </section>
+      {% endfor %}
+    </main>
+
+    <!-- BUTTON BAR -->
+    <nav
+      class="sticky bottom-0 z-30 backdrop-blur"
+      style="height: var(--bar-height); background: var(--button-secondary);"
+    >
+      <div
+        id="classBar"
+        class="relative h-full grid grid-cols-{{ classrooms | length }}"
+      >
+        <div
+          id="activeIndicator"
+          class="absolute inset-y-0 left-0
+                 transition-transform duration-300 ease-out"
+          style="
+            width: calc(100% / {{ classrooms | length }});
+            background: var(--button-primary);
+          "
+        ></div>
+
+        {% for room in classrooms %}
+          <button class="class-btn z-10 flex items-center justify-center font-semibold">
+            {{ room }}
+          </button>
+        {% endfor %}
+      </div>
+    </nav>
+
+    <!-- CONFETTI LIB -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- LOGIC -->
+    <script>
+      const scroller = document.getElementById('xScroller');
+      const classButtons = [...document.querySelectorAll('.class-btn')];
+      const splash = document.getElementById('splash');
+      const splashButtons = splash.querySelectorAll('button');
+      const indicator = document.getElementById('activeIndicator');
+
+      function scrollToRoom(index, behavior = 'smooth') {
+        scroller.scrollTo({
+          left: index * window.innerWidth,
+          behavior
+        });
+      }
+
+      function updateIndicator() {
+        const index = Math.round(scroller.scrollLeft / window.innerWidth);
+        indicator.style.transform = `translateX(${index * 100}%)`;
+
+        classButtons.forEach((btn, i) =>
+          btn.classList.toggle('is-active', i === index)
+        );
+      }
+
+      classButtons.forEach((btn, index) => {
+        btn.addEventListener('click', () => scrollToRoom(index));
+      });
+
+      /* one-time splash explosion */
+      function splashExplosion() {
+        const colors = [
+          '#ef4444', '#f97316', '#facc15',
+          '#22c55e', '#06b6d4', '#3b82f6',
+          '#8b5cf6', '#ec4899'
+        ];
+
+        const BURST_COUNT = 4;
+
+        for (let i = 0; i < BURST_COUNT; i++) {
+          const f = 1 + (i * 0.2);
+          const x = Math.random() * 0.2 + 0.4;
+          const y = Math.random() * 0.2 + 0.4;
+          const count = (Math.floor(Math.random() * 100) + 100) * f;
+          const delay = (Math.random() * 25 + 350) * f;
+
+          setTimeout(() => {
+            confetti({
+              particleCount: count,
+              spread: 360,
+              startVelocity: 20 * f,
+              scalar: 0.8,
+              origin: { x, y },
+              colors
+            });
+          }, delay * (i + 1));
+        }
+      }
+      
+      splashButtons.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+          scrollToRoom(index, 'auto');
+          splash.classList.add('hidden');
+        });
+      });
+
+      scroller.addEventListener('scroll', () => {
+        requestAnimationFrame(updateIndicator);
+      });
+
+      updateIndicator();
+      splashExplosion();
+    </script>
+
+  </body>
+</html>
