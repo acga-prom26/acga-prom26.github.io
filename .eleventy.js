@@ -39,4 +39,10 @@ export default function (eleventyConfig) {
       ? `Pan učitel ${initial}. ${person.lastname}`
       : `Paní učitelka ${initial}. ${person.lastname}`;
   });
+
+  return {
+    dir: {
+      output: "docs"
+    }
+  };
 };
