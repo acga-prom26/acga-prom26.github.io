@@ -17,15 +17,29 @@
 
       :root[data-theme="ivory"] {
         --bg-main: #fefffa;
-
-        --button-primary: #e7e5e4;
-        --button-secondary: rgba(254, 255, 250, 0.9);
-
-        --text-primary: #292524;
-        --text-secondary: #57534e;
+        --button-primary: rgba(255, 255, 255, 0.2); /* Semi-transparent white buttons */
+        --button-secondary: rgba(0, 0, 0, 0.3); /* Darker bar for white text contrast */
+        --text-primary: #ffffff;
+        --text-secondary: rgba(255, 255, 255, 0.8);
+        --accent-red: #ac0f14;
       }
+
       body {
-        background: var(--bg-main);
+        margin: 0;
+        background-image: url('./assets/background.jpeg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-color: #000; /* Dark fallback */
+        color: var(--text-primary);
+        overflow: hidden;
+        font-family: sans-serif;
+      }
+
+      /* Global text shadow to ensure white text is readable over any background */
+      h1, h2, p, blockquote, button {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
       }
 
       .card {
@@ -51,17 +65,19 @@
       }
 
       .class-btn {
-        color: var(--text-secondary);
+        color: rgba(255, 255, 255, 0.6);
+        text-shadow: none;
       }
       .class-btn.is-active {
-        color: var(--text-primary);
+        color: #ffffff;
       }
 
       #splash {
         position: fixed;
         inset: 0;
         z-index: 50;
-        background: var(--bg-main);
+        backdrop-filter: blur(12px);
+        background: rgba(0, 0, 0, 0.2); 
         display: flex;
         align-items: center;
         justify-content: center;
@@ -74,6 +90,8 @@
 
       .splash-btn {
         background: var(--button-primary);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(4px);
         line-height: 1;
       }
     </style>
@@ -81,14 +99,13 @@
 
   <body>
 
-    <!-- SPLASH -->
     <div id="splash">
       <div class="flex flex-col items-center text-center px-6 max-w-xl">
-        <h1 class="text-4xl font-bold mb-4">
+        <h1 class="text-5xl font-black mb-4 tracking-tight" style="color: var(--accent-red); text-shadow: 0 2px 10px rgba(0,0,0,0.3);">
           PLES V OPEŘE
         </h1>
 
-        <p class="text-2xl mb-2">
+        <p class="text-2xl font-black mb-2">
           Maturitní ples<br>Anglicko-českého gymnázia Amazon 2026
         </p>
 
@@ -100,48 +117,48 @@
           
             <button
               data-room="SR4A"
-              class="splash-btn w-40 h-40 rounded-2xl
+              class="splash-btn w-32 h-32 sm:w-40 sm:h-40 rounded-2xl
                      text-3xl font-bold
-                     text-[var(--text-primary)]
-                     shadow-xl
+                     text-white
+                     shadow-2xl
                      transition
-                     hover:opacity-80"
+                     hover:bg-[rgba(255,255,255,0.3)]"
             >
               SR4A
             </button>
           
             <button
               data-room="SR4C"
-              class="splash-btn w-40 h-40 rounded-2xl
+              class="splash-btn w-32 h-32 sm:w-40 sm:h-40 rounded-2xl
                      text-3xl font-bold
-                     text-[var(--text-primary)]
-                     shadow-xl
+                     text-white
+                     shadow-2xl
                      transition
-                     hover:opacity-80"
+                     hover:bg-[rgba(255,255,255,0.3)]"
             >
               SR4C
             </button>
           
             <button
               data-room="SR4D"
-              class="splash-btn w-40 h-40 rounded-2xl
+              class="splash-btn w-32 h-32 sm:w-40 sm:h-40 rounded-2xl
                      text-3xl font-bold
-                     text-[var(--text-primary)]
-                     shadow-xl
+                     text-white
+                     shadow-2xl
                      transition
-                     hover:opacity-80"
+                     hover:bg-[rgba(255,255,255,0.3)]"
             >
               SR4D
             </button>
           
             <button
               data-room="SR4E"
-              class="splash-btn w-40 h-40 rounded-2xl
+              class="splash-btn w-32 h-32 sm:w-40 sm:h-40 rounded-2xl
                      text-3xl font-bold
-                     text-[var(--text-primary)]
-                     shadow-xl
+                     text-white
+                     shadow-2xl
                      transition
-                     hover:opacity-80"
+                     hover:bg-[rgba(255,255,255,0.3)]"
             >
               SR4E
             </button>
@@ -150,7 +167,6 @@
       </div>
     </div>
 
-    <!-- MAIN -->
     <main
       id="xScroller"
       class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth"
@@ -182,18 +198,18 @@
                     alt="Pan učitel O. Boštička"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Pan učitel O. Boštička
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      „Můžeš dovést koně až k řece, ale napít se musí sám.“
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “„Můžeš dovést koně až k řece, ale napít se musí sám.“”
                     </blockquote>
                   
                 </div>
@@ -218,18 +234,18 @@
                     alt="Adéla Mervartová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Adéla Mervartová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;Life is what happens to you while you&#39;re busy making other plans.&quot; - John Lennon
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;Life is what happens to you while you&#39;re busy making other plans.&quot; - John Lennon”
                     </blockquote>
                   
                 </div>
@@ -254,18 +270,18 @@
                     alt="Anna Černá"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Anna Černá
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      It feels so scary getting old.
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “It feels so scary getting old.”
                     </blockquote>
                   
                 </div>
@@ -290,18 +306,18 @@
                     alt="Anna Kuskildina"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Anna Kuskildina
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      People have throw dirt on my name, others have given flowers. It’s all a garden to me.
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “People have throw dirt on my name, others have given flowers. It’s all a garden to me.”
                     </blockquote>
                   
                 </div>
@@ -326,18 +342,18 @@
                     alt="Anna Marie Aneltová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Anna Marie Aneltová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      happier than ever
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “happier than ever”
                     </blockquote>
                   
                 </div>
@@ -362,18 +378,18 @@
                     alt="Anna Marie Dosoudilová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Anna Marie Dosoudilová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      wait im goated
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “wait im goated”
                     </blockquote>
                   
                 </div>
@@ -398,18 +414,18 @@
                     alt="Barbora Vachtlová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Barbora Vachtlová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      ,„Niekto príde, niekto zmizne, je to kolobeh.&quot; – Sara Rikas
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “,„Niekto príde, niekto zmizne, je to kolobeh.&quot; – Sara Rikas”
                     </blockquote>
                   
                 </div>
@@ -434,18 +450,18 @@
                     alt="Claudina Pereira"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Claudina Pereira
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;Must one person&#39;s triumph be another&#39;s humiliation? Of course!&quot; - $uicideboy$
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;Must one person&#39;s triumph be another&#39;s humiliation? Of course!&quot; - $uicideboy$”
                     </blockquote>
                   
                 </div>
@@ -470,12 +486,12 @@
                     alt="David Lazárek"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     David Lazárek
                   </h2>
 
@@ -502,18 +518,18 @@
                     alt="Eliška Kubíková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Eliška Kubíková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;Im not a frontflipper ofc I can backflip bro the hell&quot; - rommulas
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;Im not a frontflipper ofc I can backflip bro the hell&quot; - rommulas”
                     </blockquote>
                   
                 </div>
@@ -538,12 +554,12 @@
                     alt="Emily Vicari"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Emily Vicari
                   </h2>
 
@@ -570,18 +586,18 @@
                     alt="Ester Zárubová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Ester Zárubová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      people tend to feel that im Michael Jackson reincarnated
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “people tend to feel that im Michael Jackson reincarnated”
                     </blockquote>
                   
                 </div>
@@ -606,18 +622,18 @@
                     alt="Eva Synková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Eva Synková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      “Do me a favor—look into my eyes?” “Your eyes?” “Do you see him? The most beautiful person in the whole world.” — Rou Bao Bu Chi Rou
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      ““Do me a favor—look into my eyes?” “Your eyes?” “Do you see him? The most beautiful person in the whole world.” — Rou Bao Bu Chi Rou”
                     </blockquote>
                   
                 </div>
@@ -642,18 +658,18 @@
                     alt="Karolína Karlová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Karolína Karlová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      “Happiness can be found, even in the darkest of times, if one only remembers to turn on the light.”
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      ““Happiness can be found, even in the darkest of times, if one only remembers to turn on the light.””
                     </blockquote>
                   
                 </div>
@@ -678,18 +694,18 @@
                     alt="Karolína Šavlová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Karolína Šavlová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      „Mama, I don’t have time for dancin’. That’s just gonna have to wait awhile.” - Anika Noni Rose
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “„Mama, I don’t have time for dancin’. That’s just gonna have to wait awhile.” - Anika Noni Rose”
                     </blockquote>
                   
                 </div>
@@ -714,18 +730,18 @@
                     alt="Kristýna Kulhanová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Kristýna Kulhanová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      Ignorance Is Bliss
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “Ignorance Is Bliss”
                     </blockquote>
                   
                 </div>
@@ -750,18 +766,18 @@
                     alt="Lia Šimáčková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Lia Šimáčková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;Everyone you meet is fighting a battle you know nothing about. Be Kind. Always,&quot; - Robin Williams
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;Everyone you meet is fighting a battle you know nothing about. Be Kind. Always,&quot; - Robin Williams”
                     </blockquote>
                   
                 </div>
@@ -786,18 +802,18 @@
                     alt="Milana Žuravleva"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Milana Žuravleva
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;In the end, if I fall or if I get it all, I just hope that it&#39;s worth it.&quot; - Jesse Rutherford
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;In the end, if I fall or if I get it all, I just hope that it&#39;s worth it.&quot; - Jesse Rutherford”
                     </blockquote>
                   
                 </div>
@@ -822,18 +838,18 @@
                     alt="Natálie Štancová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Natálie Štancová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;Years have passed but you laugh exactly the same.&quot; - Conan Gray
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;Years have passed but you laugh exactly the same.&quot; - Conan Gray”
                     </blockquote>
                   
                 </div>
@@ -858,18 +874,18 @@
                     alt="Nicol Baranjuková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Nicol Baranjuková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      keep your childlike spark alive
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “keep your childlike spark alive”
                     </blockquote>
                   
                 </div>
@@ -894,18 +910,18 @@
                     alt="Robin Mácha"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Robin Mácha
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      “If it is not right, do not do it; if it is not true, do not say it.”
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      ““If it is not right, do not do it; if it is not true, do not say it.””
                     </blockquote>
                   
                 </div>
@@ -930,18 +946,18 @@
                     alt="Sophie Novotná"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Sophie Novotná
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      for this life I cannot change
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “for this life I cannot change”
                     </blockquote>
                   
                 </div>
@@ -966,18 +982,18 @@
                     alt="Stella Valentová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Stella Valentová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      “but to feel nothing so as not to feel anything — what a waste&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      ““but to feel nothing so as not to feel anything — what a waste&quot;”
                     </blockquote>
                   
                 </div>
@@ -1012,18 +1028,18 @@
                     alt="Paní učitelka V. Aubrechtová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Paní učitelka V. Aubrechtová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      „Nic není nemožné, nikdy nic nevzdávej.&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “„Nic není nemožné, nikdy nic nevzdávej.&quot;”
                     </blockquote>
                   
                 </div>
@@ -1048,18 +1064,18 @@
                     alt="Adéla Mašínová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Adéla Mašínová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      GNARLY.
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “GNARLY.”
                     </blockquote>
                   
                 </div>
@@ -1084,18 +1100,18 @@
                     alt="Adéla Rypková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Adéla Rypková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;If it was easy, everyone would do it.&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;If it was easy, everyone would do it.&quot;”
                     </blockquote>
                   
                 </div>
@@ -1120,18 +1136,18 @@
                     alt="Andrea Boušková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Andrea Boušková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      can&#39;t rush greatness
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “can&#39;t rush greatness”
                     </blockquote>
                   
                 </div>
@@ -1156,18 +1172,18 @@
                     alt="Anna Zikmundová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Anna Zikmundová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      ,,Nejkrásnější hudba je lidský smích.” - Jan Werich
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “,,Nejkrásnější hudba je lidský smích.” - Jan Werich”
                     </blockquote>
                   
                 </div>
@@ -1192,18 +1208,18 @@
                     alt="Bára Šulcová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Bára Šulcová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      Ratatouille Main Theme - M. Giacchino
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “Ratatouille Main Theme - M. Giacchino”
                     </blockquote>
                   
                 </div>
@@ -1228,18 +1244,18 @@
                     alt="Eliška Kopačynská"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Eliška Kopačynská
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      „A o tom se budete, děti, ještě hodně učit.” - A. P.
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “„A o tom se budete, děti, ještě hodně učit.” - A. P.”
                     </blockquote>
                   
                 </div>
@@ -1264,18 +1280,18 @@
                     alt="Hana Phiphitsala"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Hana Phiphitsala
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;To infinity and beyond!&quot; - Woody, Toy Story
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;To infinity and beyond!&quot; - Woody, Toy Story”
                     </blockquote>
                   
                 </div>
@@ -1300,18 +1316,18 @@
                     alt="Jakub Jiří Zelenka"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Jakub Jiří Zelenka
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      „Jedem nocí, protože den nechci.&quot; - Sergei Barracuda
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “„Jedem nocí, protože den nechci.&quot; - Sergei Barracuda”
                     </blockquote>
                   
                 </div>
@@ -1336,18 +1352,18 @@
                     alt="Jana Riško"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Jana Riško
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      ашалеть
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “ашалеть”
                     </blockquote>
                   
                 </div>
@@ -1372,18 +1388,18 @@
                     alt="Julie Drhličková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Julie Drhličková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      But the dawn is brief and the day full often belies its promise.
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “But the dawn is brief and the day full often belies its promise.”
                     </blockquote>
                   
                 </div>
@@ -1408,18 +1424,18 @@
                     alt="Julie Mandíková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Julie Mandíková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      Rise and Shine, Ursine!
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “Rise and Shine, Ursine!”
                     </blockquote>
                   
                 </div>
@@ -1444,18 +1460,18 @@
                     alt="Karolína Stříbrná"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Karolína Stříbrná
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;Can&#39;t remember the name, huh? A senior moment perhaps.&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;Can&#39;t remember the name, huh? A senior moment perhaps.&quot;”
                     </blockquote>
                   
                 </div>
@@ -1480,18 +1496,18 @@
                     alt="Kateřina Hodová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Kateřina Hodová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      Tak bojuj ne?!
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “Tak bojuj ne?!”
                     </blockquote>
                   
                 </div>
@@ -1516,18 +1532,18 @@
                     alt="Kateřina Anna Kolářová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Kateřina Anna Kolářová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      „Na záchod pouze v situaci KRAJNÍ nouze&quot; - A. P.
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “„Na záchod pouze v situaci KRAJNÍ nouze&quot; - A. P.”
                     </blockquote>
                   
                 </div>
@@ -1552,18 +1568,18 @@
                     alt="Michael Sehnal"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Michael Sehnal
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      Happy Monday!
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “Happy Monday!”
                     </blockquote>
                   
                 </div>
@@ -1588,18 +1604,18 @@
                     alt="Miriam Sais"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Miriam Sais
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      certified lovergirl
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “certified lovergirl”
                     </blockquote>
                   
                 </div>
@@ -1624,18 +1640,18 @@
                     alt="Nella Viktorie Šperlová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Nella Viktorie Šperlová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;You can never be overdressed or overeducated&quot; – Oscar Wilde
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;You can never be overdressed or overeducated&quot; – Oscar Wilde”
                     </blockquote>
                   
                 </div>
@@ -1660,18 +1676,18 @@
                     alt="Nicol Rybářová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Nicol Rybářová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      „Můžete všechny barvy AŽ na oranžovou, ta je moje.” - A. V.
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “„Můžete všechny barvy AŽ na oranžovou, ta je moje.” - A. V.”
                     </blockquote>
                   
                 </div>
@@ -1696,18 +1712,18 @@
                     alt="Štěpán Luťanský"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Štěpán Luťanský
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      Nešahej na mé rádio a perleťový lak  - Sergei Barracuda
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “Nešahej na mé rádio a perleťový lak  - Sergei Barracuda”
                     </blockquote>
                   
                 </div>
@@ -1732,18 +1748,18 @@
                     alt="Tereza Bečičková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Tereza Bečičková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;Everything happens for a reason&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;Everything happens for a reason&quot;”
                     </blockquote>
                   
                 </div>
@@ -1768,18 +1784,18 @@
                     alt="Veronika Hanzlíková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Veronika Hanzlíková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;Will I spend all the rest of my years wishing I could go back?&quot; - Olivia Rodrigo
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;Will I spend all the rest of my years wishing I could go back?&quot; - Olivia Rodrigo”
                     </blockquote>
                   
                 </div>
@@ -1804,18 +1820,18 @@
                     alt="Veronika Šlemrová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Veronika Šlemrová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      what feels like the end is often the beginning
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “what feels like the end is often the beginning”
                     </blockquote>
                   
                 </div>
@@ -1840,18 +1856,18 @@
                     alt="Viktorie Březinová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Viktorie Březinová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      „Neřeš kolik máme peněz, hlavně že máš mě já tebe. &quot; - Viktor Sheen
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “„Neřeš kolik máme peněz, hlavně že máš mě já tebe. &quot; - Viktor Sheen”
                     </blockquote>
                   
                 </div>
@@ -1876,18 +1892,18 @@
                     alt="Viktorie Šestáková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Viktorie Šestáková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;Laugh Now Cry Later&quot; - Drake
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;Laugh Now Cry Later&quot; - Drake”
                     </blockquote>
                   
                 </div>
@@ -1922,18 +1938,18 @@
                     alt="Paní učitelka A. Vimrová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Paní učitelka A. Vimrová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;Teaching math and logic with a touch of magic.&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;Teaching math and logic with a touch of magic.&quot;”
                     </blockquote>
                   
                 </div>
@@ -1958,18 +1974,18 @@
                     alt="Amélie Chvojková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Amélie Chvojková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      What, like it&#39;s hard? - Elle Woods
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “What, like it&#39;s hard? - Elle Woods”
                     </blockquote>
                   
                 </div>
@@ -1994,18 +2010,18 @@
                     alt="Anna Mia Stolařová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Anna Mia Stolařová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      What people say isn&#39;t going to stop me. I have to do things for myself.- Kate Moss
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “What people say isn&#39;t going to stop me. I have to do things for myself.- Kate Moss”
                     </blockquote>
                   
                 </div>
@@ -2030,18 +2046,18 @@
                     alt="Barbora Krejčí"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Barbora Krejčí
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      No pain, no gain
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “No pain, no gain”
                     </blockquote>
                   
                 </div>
@@ -2066,18 +2082,18 @@
                     alt="Ela Rychtaříková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Ela Rychtaříková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      Tequila won&#39;t fix your life, but it&#39;s worth a shot.
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “Tequila won&#39;t fix your life, but it&#39;s worth a shot.”
                     </blockquote>
                   
                 </div>
@@ -2102,12 +2118,12 @@
                     alt="Eliška Kozderková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Eliška Kozderková
                   </h2>
 
@@ -2134,18 +2150,18 @@
                     alt="Ester Železná"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Ester Železná
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      I have been changed for good. - Wicked
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “I have been changed for good. - Wicked”
                     </blockquote>
                   
                 </div>
@@ -2170,18 +2186,18 @@
                     alt="Eva Dušátková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Eva Dušátková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      Baby, you&#39;re the baddest girl
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “Baby, you&#39;re the baddest girl”
                     </blockquote>
                   
                 </div>
@@ -2206,18 +2222,18 @@
                     alt="Filip Stříbrný"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Filip Stříbrný
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      Common sense is like deodorant. The people who need it most never use it.
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “Common sense is like deodorant. The people who need it most never use it.”
                     </blockquote>
                   
                 </div>
@@ -2242,12 +2258,12 @@
                     alt="Izabela Kubies"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Izabela Kubies
                   </h2>
 
@@ -2274,18 +2290,18 @@
                     alt="Jana Adámková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Jana Adámková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      meet me at the lake &#39;round ten?
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “meet me at the lake &#39;round ten?”
                     </blockquote>
                   
                 </div>
@@ -2310,18 +2326,18 @@
                     alt="Joseph Louis Stein"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Joseph Louis Stein
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      Normality is a paved road. It’s comfortable to walk, but no flowers grow on it - Vincent Van Gogh
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “Normality is a paved road. It’s comfortable to walk, but no flowers grow on it - Vincent Van Gogh”
                     </blockquote>
                   
                 </div>
@@ -2346,18 +2362,18 @@
                     alt="Klára Varhaníková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Klára Varhaníková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      my vibe could bring back Christ
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “my vibe could bring back Christ”
                     </blockquote>
                   
                 </div>
@@ -2382,18 +2398,18 @@
                     alt="Laura Mirošníková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Laura Mirošníková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      None of this would&#39;ve happened if it wasn&#39;t for the cheese. - Goat Story
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “None of this would&#39;ve happened if it wasn&#39;t for the cheese. - Goat Story”
                     </blockquote>
                   
                 </div>
@@ -2418,18 +2434,18 @@
                     alt="Leonard Reed Stein"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Leonard Reed Stein
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      Laziness is nothing more than the habit of resting before you get tired
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “Laziness is nothing more than the habit of resting before you get tired”
                     </blockquote>
                   
                 </div>
@@ -2454,18 +2470,18 @@
                     alt="Martin Stoklásek"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Martin Stoklásek
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      Žij ten život.
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “Žij ten život.”
                     </blockquote>
                   
                 </div>
@@ -2490,18 +2506,18 @@
                     alt="Matěj Pavlík"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Matěj Pavlík
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      We&#39;re all just victims of a crime - M. Shadows
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “We&#39;re all just victims of a crime - M. Shadows”
                     </blockquote>
                   
                 </div>
@@ -2526,18 +2542,18 @@
                     alt="Maya Vondráčková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Maya Vondráčková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      When nothing goes right... go left.
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “When nothing goes right... go left.”
                     </blockquote>
                   
                 </div>
@@ -2562,18 +2578,18 @@
                     alt="Monika Prokešová Flores"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Monika Prokešová Flores
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      Que será, será.
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “Que será, será.”
                     </blockquote>
                   
                 </div>
@@ -2598,18 +2614,18 @@
                     alt="Patrik Štráberger"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Patrik Štráberger
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      The shot clock doesn&#39;t care if you shoot it, but your conscience will.
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “The shot clock doesn&#39;t care if you shoot it, but your conscience will.”
                     </blockquote>
                   
                 </div>
@@ -2634,18 +2650,18 @@
                     alt="Tadeáš Freund"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Tadeáš Freund
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      Simply Lovely! I&#39;ll tell you that! - Max Verstappen
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “Simply Lovely! I&#39;ll tell you that! - Max Verstappen”
                     </blockquote>
                   
                 </div>
@@ -2670,12 +2686,12 @@
                     alt="Tobiáš Malásek"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Tobiáš Malásek
                   </h2>
 
@@ -2702,18 +2718,18 @@
                     alt="Viktorie Voříšková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Viktorie Voříšková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      Endlessly blessed, forever grateful
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “Endlessly blessed, forever grateful”
                     </blockquote>
                   
                 </div>
@@ -2748,18 +2764,18 @@
                     alt="Paní učitelka P. Březinová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Paní učitelka P. Březinová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;Nemůžeš? Přidej!&quot; Emil Zátopek
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;Nemůžeš? Přidej!&quot; Emil Zátopek”
                     </blockquote>
                   
                 </div>
@@ -2784,18 +2800,18 @@
                     alt="Anastasia Sevcenco"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Anastasia Sevcenco
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;All our dreams will come true if we have the courage to pursue them&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;All our dreams will come true if we have the courage to pursue them&quot;”
                     </blockquote>
                   
                 </div>
@@ -2820,18 +2836,18 @@
                     alt="Anna Cimrmanová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Anna Cimrmanová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;Look like Barbie, smoke like Marley.&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;Look like Barbie, smoke like Marley.&quot;”
                     </blockquote>
                   
                 </div>
@@ -2856,18 +2872,18 @@
                     alt="Anna Šejblová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Anna Šejblová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;essere piuttosto sembrare&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;essere piuttosto sembrare&quot;”
                     </blockquote>
                   
                 </div>
@@ -2892,18 +2908,18 @@
                     alt="Barbora Kasová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Barbora Kasová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      “Keep your heels, head and standards high.” – Coco Chanel
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      ““Keep your heels, head and standards high.” – Coco Chanel”
                     </blockquote>
                   
                 </div>
@@ -2928,18 +2944,18 @@
                     alt="Eliška Janoušková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Eliška Janoušková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      ”just because u don&#39;t give up, doesn&#39;t mean u will make it&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “”just because u don&#39;t give up, doesn&#39;t mean u will make it&quot;”
                     </blockquote>
                   
                 </div>
@@ -2964,18 +2980,18 @@
                     alt="Ella Macková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Ella Macková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      Helvetica bold.
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “Helvetica bold.”
                     </blockquote>
                   
                 </div>
@@ -3000,18 +3016,18 @@
                     alt="Emma Francine Dupaux"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Emma Francine Dupaux
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;fakt jsem se snažila&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;fakt jsem se snažila&quot;”
                     </blockquote>
                   
                 </div>
@@ -3036,18 +3052,18 @@
                     alt="Eva Žižková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Eva Žižková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;You are who you surround yourself with.&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;You are who you surround yourself with.&quot;”
                     </blockquote>
                   
                 </div>
@@ -3072,18 +3088,18 @@
                     alt="Jan Delevič"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Jan Delevič
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;Quod licet Iovi, non licet bovi&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;Quod licet Iovi, non licet bovi&quot;”
                     </blockquote>
                   
                 </div>
@@ -3108,18 +3124,18 @@
                     alt="Kristina Anna Bartáková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Kristina Anna Bartáková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      realistic goals are for average people.
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “realistic goals are for average people.”
                     </blockquote>
                   
                 </div>
@@ -3144,18 +3160,18 @@
                     alt="Kryštof Turek"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Kryštof Turek
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      I like my women how I like my coffee. I don’t like coffee.
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “I like my women how I like my coffee. I don’t like coffee.”
                     </blockquote>
                   
                 </div>
@@ -3180,18 +3196,18 @@
                     alt="Leontýna Liščáková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Leontýna Liščáková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      „Nemůžeš přijít pozdě, když nepřijdeš vůbec“
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “„Nemůžeš přijít pozdě, když nepřijdeš vůbec“”
                     </blockquote>
                   
                 </div>
@@ -3216,18 +3232,18 @@
                     alt="Matěj Drahoš"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Matěj Drahoš
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      Whoever gives nothing, has nothing. The greatest misfortune is not to be unloved, but not to love.
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “Whoever gives nothing, has nothing. The greatest misfortune is not to be unloved, but not to love.”
                     </blockquote>
                   
                 </div>
@@ -3252,18 +3268,18 @@
                     alt="Nikol Pancnerová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Nikol Pancnerová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      *PŘIZNÁNÍ* Můj největší strach je, že mi někdo sundá ponožky a já nebudu mít upravené nehty na nohou
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “*PŘIZNÁNÍ* Můj největší strach je, že mi někdo sundá ponožky a já nebudu mít upravené nehty na nohou”
                     </blockquote>
                   
                 </div>
@@ -3288,18 +3304,18 @@
                     alt="Sarah Ladjimi"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Sarah Ladjimi
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      “Long story short I survived.”
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      ““Long story short I survived.””
                     </blockquote>
                   
                 </div>
@@ -3324,18 +3340,18 @@
                     alt="Stela Fančíková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Stela Fančíková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;nejhorší smrt je z vyplašení&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;nejhorší smrt je z vyplašení&quot;”
                     </blockquote>
                   
                 </div>
@@ -3360,18 +3376,18 @@
                     alt="Štěpánka Kozlová"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Štěpánka Kozlová
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;jsem č * * * *, že jsem sem lezl&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;jsem č * * * *, že jsem sem lezl&quot;”
                     </blockquote>
                   
                 </div>
@@ -3396,12 +3412,12 @@
                     alt="Tereza Koudelková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Tereza Koudelková
                   </h2>
 
@@ -3428,18 +3444,18 @@
                     alt="Tereza Krňanská"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Tereza Krňanská
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot; #mě nedostanou&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot; #mě nedostanou&quot;”
                     </blockquote>
                   
                 </div>
@@ -3464,18 +3480,18 @@
                     alt="Veronika Pečenková"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Veronika Pečenková
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;Why fall in love when you can fall asleep.&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;Why fall in love when you can fall asleep.&quot;”
                     </blockquote>
                   
                 </div>
@@ -3500,18 +3516,18 @@
                     alt="Veronika Pokorná"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Veronika Pokorná
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      quote so fire im gatekeeping
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “quote so fire im gatekeeping”
                     </blockquote>
                   
                 </div>
@@ -3536,18 +3552,18 @@
                     alt="Vojtěch Kovařík"
                     loading="lazy"
                     onload="this.closest('.card').classList.add('is-visible')"
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-lg border border-white/10"
                   />
                 </div>
 
-                <div class="text-center">
-                  <h2 class="text-2xl sm:text-4xl font-bold">
+                <div class="text-center pb-4">
+                  <h2 class="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-md">
                     Vojtěch Kovařík
                   </h2>
 
                   
-                    <blockquote class="p-2 italic text-base sm:text-lg text-[var(--text-secondary)]">
-                      &quot;La pasión&quot;
+                    <blockquote class="text-xl font-black italic text-base text-[var(--text-primary)] mx-auto drop-shadow-md">
+                      “&quot;La pasión&quot;”
                     </blockquote>
                   
                 </div>
@@ -3559,10 +3575,9 @@
       
     </main>
 
-    <!-- BUTTON BAR -->
     <nav
-      class="sticky bottom-0 z-30 backdrop-blur"
-      style="height: var(--bar-height); background: var(--button-secondary);"
+      class="sticky bottom-0 z-30 backdrop-blur-xl"
+      style="height: var(--bar-height); background: var(--button-secondary); border-top: 1px solid rgba(255,255,255,0.1);"
     >
       <div
         id="classBar"
@@ -3574,34 +3589,32 @@
                  transition-transform duration-300 ease-out"
           style="
             width: calc(100% / 4);
-            background: var(--button-primary);
+            background: rgba(255, 255, 255, 0.15);
           "
         ></div>
 
         
-          <button class="class-btn z-10 flex items-center justify-center font-semibold">
+          <button class="class-btn z-10 flex items-center justify-center font-bold uppercase tracking-widest text-sm">
             SR4A
           </button>
         
-          <button class="class-btn z-10 flex items-center justify-center font-semibold">
+          <button class="class-btn z-10 flex items-center justify-center font-bold uppercase tracking-widest text-sm">
             SR4C
           </button>
         
-          <button class="class-btn z-10 flex items-center justify-center font-semibold">
+          <button class="class-btn z-10 flex items-center justify-center font-bold uppercase tracking-widest text-sm">
             SR4D
           </button>
         
-          <button class="class-btn z-10 flex items-center justify-center font-semibold">
+          <button class="class-btn z-10 flex items-center justify-center font-bold uppercase tracking-widest text-sm">
             SR4E
           </button>
         
       </div>
     </nav>
 
-    <!-- CONFETTI LIB -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-    <!-- LOGIC -->
     <script>
       const scroller = document.getElementById('xScroller');
       const classButtons = [...document.querySelectorAll('.class-btn')];
@@ -3630,12 +3643,7 @@
       });
 
       function splashExplosion() {
-        const colors = [
-          '#ef4444', '#f97316', '#facc15',
-          '#22c55e', '#06b6d4', '#3b82f6',
-          '#8b5cf6', '#ec4899'
-        ];
-
+        const colors = ['#ac0f14', '#ffffff', '#facc15']; // Red, White, Gold
         const BURST_COUNT = 4;
 
         for (let i = 0; i < BURST_COUNT; i++) {
@@ -3649,8 +3657,7 @@
             confetti({
               particleCount: count,
               spread: 360,
-              startVelocity: 20 * f,
-              scalar: 0.8,
+              startVelocity: 25 * f,
               origin: { x, y },
               colors
             });
