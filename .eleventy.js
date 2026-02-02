@@ -5,8 +5,10 @@ export default function (eleventyConfig) {
     port: 8080
   });
 
-  eleventyConfig.addPassthroughCopy("assets");
-
+  eleventyConfig.setDataDirectory("_data");
+  eleventyConfig.setInputDirectory("src");
+  eleventyConfig.setOutputDirectory(".");
+  
   eleventyConfig.addFilter("fullname", person => {
     return `${person.firstname} ${person.lastname}`;
   });
@@ -39,10 +41,4 @@ export default function (eleventyConfig) {
       ? `Pan učitel ${initial}. ${person.lastname}`
       : `Paní učitelka ${initial}. ${person.lastname}`;
   });
-
-  return {
-    dir: {
-      output: "docs"
-    }
-  };
 };
