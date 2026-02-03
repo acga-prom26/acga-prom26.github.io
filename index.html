@@ -17,8 +17,8 @@
 
       :root[data-theme="ivory"] {
         --bg-main: #fefffa;
-        --button-primary: rgba(255, 255, 255, 0.2); /* Semi-transparent white buttons */
-        --button-secondary: rgba(0, 0, 0, 0.3); /* Darker bar for white text contrast */
+        --button-primary: rgba(255, 255, 255, 0.2);
+        --button-secondary: rgba(0, 0, 0, 0.3);
         --text-primary: #ffffff;
         --text-secondary: rgba(255, 255, 255, 0.8);
         --accent-red: #ac0f14;
@@ -26,22 +26,64 @@
 
       body {
         margin: 0;
+        /* The SINGLE background source */
         background-image: url('./assets/background.jpeg');
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
-        background-color: #000; /* Dark fallback */
+        background-color: #000;
         color: var(--text-primary);
         overflow: hidden;
         font-family: sans-serif;
       }
 
-      /* Global text shadow to ensure white text is readable over any background */
       h1, h2, p, blockquote, button {
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
       }
 
+      /* --- SPLASH SCREEN --- */
+      #splash {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        
+        /* This blurs the BODY background because the content is hidden */
+        backdrop-filter: blur(8px);
+        background-color: rgba(0, 0, 0, 0.3);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 800ms ease; /* Slower fade for dramatic effect */
+      }
+
+      #splash.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .splash-btn {
+        background: var(--button-primary);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(4px);
+        line-height: 1;
+      }
+
+      /* --- CONTENT VISIBILITY --- */
+      /* These classes control the main grid and nav */
+      .app-content {
+        transition: opacity 800ms ease;
+        opacity: 0; /* Hidden initially so we see the body bg through the splash */
+        pointer-events: none;
+      }
+      
+      .app-content.visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* --- SCROLLER & CARDS --- */
       .card {
         opacity: 0;
         transform: translateY(10px);
@@ -70,29 +112,6 @@
       }
       .class-btn.is-active {
         color: #ffffff;
-      }
-
-      #splash {
-        position: fixed;
-        inset: 0;
-        z-index: 50;
-        backdrop-filter: blur(12px);
-        background: rgba(0, 0, 0, 0.2); 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: opacity 600ms ease;
-      }
-      #splash.hidden {
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      .splash-btn {
-        background: var(--button-primary);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        backdrop-filter: blur(4px);
-        line-height: 1;
       }
     </style>
   </head>
@@ -169,7 +188,7 @@
 
     <main
       id="xScroller"
-      class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth"
+      class="app-content flex overflow-x-auto snap-x snap-mandatory scroll-smooth"
       style="height: var(--safe-height);"
     >
       
@@ -3576,7 +3595,7 @@
     </main>
 
     <nav
-      class="sticky bottom-0 z-30 backdrop-blur-xl"
+      class="app-content sticky bottom-0 z-30 backdrop-blur-xl"
       style="height: var(--bar-height); background: var(--button-secondary); border-top: 1px solid rgba(255,255,255,0.1);"
     >
       <div
@@ -3621,6 +3640,9 @@
       const splash = document.getElementById('splash');
       const splashButtons = splash.querySelectorAll('button');
       const indicator = document.getElementById('activeIndicator');
+      
+      // Select the hidden content elements
+      const appContents = document.querySelectorAll('.app-content');
 
       function scrollToRoom(index, behavior = 'smooth') {
         scroller.scrollTo({
@@ -3643,7 +3665,7 @@
       });
 
       function splashExplosion() {
-        const colors = ['#ac0f14', '#ffffff', '#facc15']; // Red, White, Gold
+        const colors = ['#ac0f14', '#ffffff', '#facc15']; 
         const BURST_COUNT = 4;
 
         for (let i = 0; i < BURST_COUNT; i++) {
@@ -3668,7 +3690,12 @@
       splashButtons.forEach((btn, index) => {
         btn.addEventListener('click', () => {
           scrollToRoom(index, 'auto');
+          
+          // 1. Hide the splash
           splash.classList.add('hidden');
+          
+          // 2. Reveal the main content
+          appContents.forEach(el => el.classList.add('visible'));
         });
       });
 
